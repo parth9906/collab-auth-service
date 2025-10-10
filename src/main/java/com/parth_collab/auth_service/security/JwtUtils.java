@@ -31,7 +31,7 @@ public class JwtUtils {
         Map<String, Object> claims = objectMapper.convertValue(user, Map.class);
 
         claims.remove("password"); // Never include password
-        claims.remove("id");
+//        claims.remove("id");
         Key key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
 
         return Jwts.builder()
